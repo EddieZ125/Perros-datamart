@@ -11,6 +11,6 @@ class perrosFacturasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\perro_factura::class,300)->create();
     }
 }

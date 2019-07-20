@@ -2,12 +2,12 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\perro;
+use App\refresco;
 use Faker\Generator as Faker;
 
-$factory->define(perro::class, function (Faker $faker) {
-	$precio_venta = $faker->randomFloat(2,10000,50000);
-	$costo = $faker->randomFloat(2,100,1000);
+$factory->define(refresco::class, function (Faker $faker) {
+	$precio_venta = $faker->randomFloat(2,100,2000);
+	$costo = $precio_venta - $faker->randomFloat(2,50,$precio_venta-40);
     return [
         'nombre' => $faker->company,
         'precio_venta' => $precio_venta,

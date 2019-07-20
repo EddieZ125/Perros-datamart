@@ -11,6 +11,6 @@ class RefrescosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\refresco::class,10)->create();
     }
 }

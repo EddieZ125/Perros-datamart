@@ -14,13 +14,13 @@ class FacturaRefresco extends Migration
     public function up()
     {
         Schema::create('factura_refresco', function (Blueprint $table){
-            $table->unsignedInteger('id_factura');
-            $table->unsignedInteger('id_refresco');
+            $table->unsignedInteger('factura_id');
+            $table->unsignedInteger('refresco_id');
         });
 
         Schema::table('factura_refresco', function (Blueprint $table){
-            $table->foreign('id_factura')->references('id')->on('factura')->onDelete('cascade');
-            $table->foreign('id_refresco')->references('id')->on('refresco')->onDelete('cascade');
+            $table->foreign('factura_id')->references('id')->on('factura')->onDelete('cascade');
+            $table->foreign('refresco_id')->references('id')->on('refresco')->onDelete('cascade');
         });
     }
 

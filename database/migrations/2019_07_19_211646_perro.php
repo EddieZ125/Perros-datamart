@@ -18,8 +18,6 @@ class Perro extends Migration
             $table->string('nombre');
             $table->float('precio_venta',10,2);
             $table->float('costo',10,2);
-            $table->date('fecha');
-
         });
     }
 

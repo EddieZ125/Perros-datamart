@@ -11,6 +11,6 @@ class FacturasRefrescosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\factura_refresco::class, 100)->create();
     }
 }

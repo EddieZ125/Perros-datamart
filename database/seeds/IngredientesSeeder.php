@@ -11,6 +11,6 @@ class IngredientesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\ingrediente::class, 20)->create();
     }
 }
