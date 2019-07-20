@@ -15,11 +15,15 @@ class Factura extends Migration
     {
         Schema::create('factura', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('cliente');
-            $table->integer('sucursal_id');
-            $table->foreign('sucursal_id')->references('id')->on('sucursal');
+            $table->unsignedInteger('cliente_id');
+            $table->unsignedInteger('sucursal_id');
             $table->date('fecha');
+            
+        });
+
+        Schema::table('factura', function (Blueprint $table){
+            $table->foreign('cliente_id')->references('id')->on('cliente')->onDelete('cascade');
+            $table->foreign('sucursal_id')->references('id')->on('sucursal')->onDelete('cascade');
         });
     }
 

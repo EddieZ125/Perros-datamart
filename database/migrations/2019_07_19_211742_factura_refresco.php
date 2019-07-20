@@ -13,7 +13,15 @@ class FacturaRefresco extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('factura_refresco', function (Blueprint $table){
+            $table->unsignedInteger('id_factura');
+            $table->unsignedInteger('id_refresco');
+        });
+
+        Schema::table('factura_refresco', function (Blueprint $table){
+            $table->foreign('id_factura')->references('id')->on('factura')->onDelete('cascade');
+            $table->foreign('id_refresco')->references('id')->on('refresco')->onDelete('cascade');
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class FacturaRefresco extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('factura_refresco');
     }
 }

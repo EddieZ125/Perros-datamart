@@ -13,7 +13,17 @@ class PerroFactura extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('perro_factura', function (Blueprint $table){
+            $table->increments('id');
+            $table->integer('cantidad');
+            $table->unsignedInteger('perro_id');
+            $table->unsignedInteger('factura_id');
+        });
+
+        Schema::table('perro_factura', function (Blueprint $table){
+            $table->foreign('perro_id')->references('id')->on('perro')->onDelete('cascade');
+            $table->foreign('factura_id')->references('id')->on('factura')->onDelete('cascade');
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class PerroFactura extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('perro_factura');
     }
 }

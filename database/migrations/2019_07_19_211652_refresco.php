@@ -13,7 +13,7 @@ class Refresco extends Migration
      */
     public function up()
     {
-        Schema::create('perro', function (Blueprint $table){
+        Schema::create('refresco', function (Blueprint $table){
             $table->increments('id');
             $table->string('nombre');
             $table->float('precio',10,2);
