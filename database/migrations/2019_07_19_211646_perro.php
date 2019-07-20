@@ -16,7 +16,8 @@ class Perro extends Migration
         Schema::create('perro', function (Blueprint $table){
             $table->increments('id');
             $table->string('nombre');
-            $table->float('precio',10,2);
+            $table->float('precio_venta',10,2);
+            $table->float('costo',10,2);
             $table->date('fecha');
 
         });

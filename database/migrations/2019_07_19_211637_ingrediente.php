@@ -16,6 +16,7 @@ class Ingrediente extends Migration
         Schema::create('ingrediente', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->float('costo',10,2);
         });
     }
 
